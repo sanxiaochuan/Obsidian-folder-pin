@@ -1,0 +1,303 @@
+/* Pin Folder Plugin Styles */
+
+/* 固定文件夹容器样式 */
+.pinned-folders-container {
+	background: var(--background-secondary);
+	border-bottom: 1px solid var(--background-modifier-border);
+	padding: 8px 0;
+	margin-bottom: 8px;
+}
+
+.pinned-folders-title {
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--text-muted);
+	margin-bottom: 4px;
+	padding: 4px 8px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+/* 固定文件夹项样式 */
+.pinned-folder-item {
+	display: flex;
+	align-items: center;
+	padding: 4px 8px;
+	border-radius: 4px;
+	margin-bottom: 2px;
+	cursor: pointer;
+	font-size: 14px;
+	position: relative;
+	transition: background-color 0.2s ease;
+}
+
+.pinned-folder-item:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.pinned-folder-item .folder-name {
+	flex: 1;
+	color: var(--text-normal);
+	font-weight: 500;
+}
+
+/* 取消固定按钮样式 */
+.unpin-button {
+	position: absolute;
+	right: 8px;
+	background: var(--background-error);
+	color: var(--text-on-accent);
+	border: none;
+	border-radius: 50%;
+	width: 16px;
+	height: 16px;
+	font-size: 10px;
+	cursor: pointer;
+	display: none;
+	line-height: 1;
+	transition: all 0.2s ease;
+	z-index: 10;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.unpin-button:hover {
+	background: var(--text-error);
+	transform: scale(1.1);
+}
+
+.pinned-folder-item:hover .unpin-button {
+	display: block;
+}
+
+/* 展开状态样式 */
+.pinned-folder-item.expanded {
+	background-color: var(--background-modifier-accent);
+}
+
+/* 展开图标样式 - 修复重叠问题 */
+.expand-icon {
+	margin-left: 4px;
+	margin-right: 20px; /* 为取消按钮留出空间 */
+	font-size: 10px;
+	color: var(--text-muted);
+	transition: transform 0.2s ease;
+	position: relative;
+	z-index: 5;
+}
+
+.pinned-folder-item.expanded .expand-icon {
+	transform: rotate(0deg);
+}
+
+/* 子文件夹容器样式 */
+.sub-folder-container {
+	margin-left: 20px;
+	margin-top: 4px;
+	border-left: 2px solid var(--background-modifier-border);
+	padding-left: 8px;
+}
+
+.sub-sub-container {
+	margin-left: 20px;
+	margin-top: 2px;
+	border-left: 1px solid var(--background-modifier-border);
+	padding-left: 6px;
+}
+
+/* 子文件夹项样式 */
+.sub-folder-item {
+	display: flex;
+	align-items: center;
+	padding: 2px 8px;
+	border-radius: 3px;
+	margin-bottom: 1px;
+	cursor: pointer;
+	font-size: 13px;
+	position: relative;
+	transition: background-color 0.2s ease;
+}
+
+.sub-folder-item:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.sub-folder-item .item-name {
+	flex: 1;
+	color: var(--text-normal);
+}
+
+.sub-folder-item .item-icon {
+	margin-right: 4px;
+	font-size: 12px;
+}
+
+/* 子文件夹展开图标样式 */
+.sub-expand-icon {
+	margin-left: 4px;
+	font-size: 10px;
+	color: var(--text-muted);
+	transition: transform 0.2s ease;
+}
+
+.sub-folder-item.expanded .sub-expand-icon {
+	transform: rotate(0deg);
+}
+
+/* 空文件夹消息样式 */
+.empty-folder-message {
+	color: var(--text-muted);
+	font-size: 12px;
+	font-style: italic;
+	padding: 4px 8px;
+}
+
+/* 固定图标样式 */
+.pin-icon {
+	color: var(--text-accent);
+	font-size: 12px;
+	margin-right: 6px;
+	opacity: 0.8;
+	transition: opacity 0.2s ease;
+}
+
+.pin-icon:hover {
+	opacity: 1;
+}
+
+/* 设置界面样式 */
+.pinned-folders-container {
+	margin: 16px 0;
+}
+
+.pinned-folders-list {
+	max-height: 300px;
+	overflow-y: auto;
+}
+
+.no-pinned-folders {
+	color: var(--text-muted);
+	font-style: italic;
+	padding: 20px;
+	text-align: center;
+}
+
+.button-container {
+	display: flex;
+	gap: 8px;
+	margin-top: 16px;
+}
+
+/* 文件夹路径样式 */
+.folder-path {
+	font-family: var(--font-monospace);
+	font-size: 12px;
+	color: var(--text-muted);
+	flex: 1;
+	word-break: break-all;
+}
+
+/* 按钮样式 */
+.pinned-folder-item button {
+	background: var(--interactive-normal);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	color: var(--text-normal);
+	cursor: pointer;
+	font-size: 12px;
+	margin-left: 4px;
+	padding: 4px 8px;
+	transition: all 0.2s ease;
+}
+
+.pinned-folder-item button:hover:not(:disabled) {
+	background: var(--interactive-hover);
+	border-color: var(--text-accent);
+}
+
+.pinned-folder-item button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+/* 取消固定按钮特殊样式 */
+.pinned-folder-item button[style*="color: var(--text-error)"] {
+	color: var(--text-error) !important;
+}
+
+.pinned-folder-item button[style*="color: var(--text-error)"]:hover {
+	background: var(--text-error);
+	color: var(--text-on-accent) !important;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+	.pinned-folder-item {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	
+	.pinned-folder-item button {
+		margin: 4px 4px 0 0;
+	}
+}
+
+/* 深色主题适配 */
+.theme-dark .pinned-folder-item {
+	background: var(--background-secondary);
+}
+
+.theme-dark .pinned-folder-item:hover {
+	background: var(--background-modifier-hover);
+}
+
+/* 动画效果 */
+@keyframes pinAnimation {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.pin-icon.newly-pinned {
+	animation: pinAnimation 0.5s ease;
+}
+
+/* 设置标签页样式 */
+.setting-item-description {
+	color: var(--text-muted);
+	font-size: 12px;
+	margin-top: 4px;
+}
+
+/* 导入导出区域样式 */
+.import-export-section {
+	border-top: 1px solid var(--background-modifier-border);
+	margin-top: 20px;
+	padding-top: 20px;
+}
+
+/* 成功消息样式 */
+.import-success {
+	background: var(--background-success);
+	border: 1px solid var(--text-success);
+	border-radius: 4px;
+	color: var(--text-success);
+	margin-top: 10px;
+	padding: 10px;
+}
+
+/* 错误消息样式 */
+.import-error {
+	background: var(--background-error);
+	border: 1px solid var(--text-error);
+	border-radius: 4px;
+	color: var(--text-error);
+	margin-top: 10px;
+	padding: 10px;
+}
