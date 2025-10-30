@@ -3,6 +3,7 @@
 一个用于 Obsidian 的插件，可以将常用文件夹固定在文件浏览器顶部，方便快速访问。
 我用PARA法组织文件，常用的工作区的文件夹层级很深，操作起来很不方便，所以做了这个插件
 
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/b1d32270-2546-418c-9037-bfa9e20fa0d8" />
 
 ## 功能特性
 
@@ -24,6 +25,7 @@
    - 找到 "Pin Folder" 并启用
 
 ## 使用方法
+https://github.com/user-attachments/assets/b3575d20-adc8-4ea7-bc3f-e48645f5a791
 
 ### 固定文件夹
 - 在文件浏览器中右键点击任意文件夹
